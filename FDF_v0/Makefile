@@ -8,8 +8,8 @@ all:				libft/libft.a $(NAME)
 libft/libft.a: libft
 	@make -C libft/
 $(NAME): libft $(OBJ) $(INC)
-	gcc -Wall -Wextra -Werror $(OBJ) libft/libft.a \
-	-lmlx -framework OpenGL -framework AppKit \
+	gcc -Wall -Wextra -Werror $(OBJ) libft/libft.a  \
+	 minilibx_macos/libmlx.a  -framework OpenGL -framework AppKit \
 	-o $(NAME)
 %.o: %.c libft $(INC)
 	gcc -Wall -Wextra -Wextra -O2 -I $(INC) -o $@ -c $<
